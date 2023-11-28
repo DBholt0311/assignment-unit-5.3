@@ -17,17 +17,30 @@ addToCollection('electronic', 'Discovery', 'Daft Punk', 2001);
 addToCollection('rock', `Good Apollo I'm Burning Star IV`, 'Coheed and Cambria', 2005);
 addToCollection('indie', 'The Ocean Went Mad and We Were to Blame', 'The Dead South', 2013);
 addToCollection('electronic', 'Gorillaz', 'Gorillaz', 2001);
-addToCollection('rock', 'Hybrid Theory', 'Linkin Park', 2000);
+addToCollection('electronic', 'Homework', 'Daft Punk', 1997);
 console.log(myCollection);
     //- Add the new object to the end of the `collection` array.
     //- `return` the newly created object.
-    const showCollection = function (collection) {
-      console.log(collection);
-    }
+const showCollection = function (collection) {
+    collection.forEach(function (record) {
+      console.log(`Album: ${record.title} Artist: ${record.artist} Released on ${record.yearPublished}`);
+    });
+}
 showCollection(myCollection);
-  //create a function named showCollection
-    //- Take in a `collection` parameter. (This allows it to be reused to show any array of album objects.)
-    //- Loop through the `collection` and `console.log` each album's information formatted **within a single string**, like: `TITLE by ARTIST, published in YEAR`.
+
+let result = [];
+const findByArtist = function (collection) {
+  myCollection.forEach (function (record) {
+    if (collection === record.artist) {
+      result.push(record);
+    } else {
+      result = [];
+    }
+  });
+}
+findByArtist('Daft Punk');
+findByArtist('Lady Gaga')
+console.log("Search Results: " + result);
   //create a function named findByArtist
     //- Take in a `collection` parameter. Remember, we want to be able to search any collection!
     //- Take in an `artist` (string) parameter.
