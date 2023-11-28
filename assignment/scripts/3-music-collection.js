@@ -11,6 +11,7 @@ const addToCollection = function (collection, title, artist, yearPublished) {
     yearPublished: yearPublished,
   };
   myCollection.push(record);
+  return collection;
 }
 addToCollection('rap', 'Man on the Moon', 'Kid Cudi', 2009);
 addToCollection('electronic', 'Discovery', 'Daft Punk', 2001);
@@ -21,26 +22,26 @@ addToCollection('electronic', 'Homework', 'Daft Punk', 1997);
 console.log(myCollection);
     //- Add the new object to the end of the `collection` array.
     //- `return` the newly created object.
+    console.log('!!!show!!!');
 const showCollection = function (collection) {
     collection.forEach(function (record) {
       console.log(`Album: ${record.title} Artist: ${record.artist} Released on ${record.yearPublished}`);
     });
 }
 showCollection(myCollection);
-
+console.log("!!!find!!!")
 let result = [];
 const findByArtist = function (collection) {
   myCollection.forEach (function (record) {
     if (collection === record.artist) {
       result.push(record);
-    } else {
-      result = [];
+     
     }
   });
 }
+console.log(result);
 findByArtist('Daft Punk');
-findByArtist('Lady Gaga')
-console.log("Search Results: " + result);
+findByArtist('lady gaga');
   //create a function named findByArtist
     //- Take in a `collection` parameter. Remember, we want to be able to search any collection!
     //- Take in an `artist` (string) parameter.
